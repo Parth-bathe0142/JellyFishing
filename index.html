@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                background-color: #474747;
+                color: #649241;
+                margin: 0px;
+                font-family: comic sans ms;
+                font-size: 20px;
+            }
+            #container {
+                width: fit-content;
+                position: relative;
+                padding: 3px;
+                display: flex;
+                flex-direction: row;
+                border: solid white 3px;
+            }
+            #container canvas, #ui {
+                margin: 3px;
+                border: solid white 3px;
+            }
+            #canvas-container {
+                height: fit-content;
+                width: fit-content;
+                border: solid white 1px;
+            }
+            .gameover {
+                height: fit-content;
+                width: fit-content;
+                padding: 20px;
+                position: absolute;
+                margin: auto;
+                top: 0%;
+                left: 0%;
+                right: 0%;
+                bottom: 0%;
+                background-color: #22222288;
+                color: #efe9e9;
+                z-index: 1;
+                display: none;
+            }
+            canvas {
+                height: 456px;
+                width: 756px;
+                background-image: url("images/Background.png");
+                background-position-x: right;
+                background-position-y: bottom;
+            }
+            #ui {
+                height: 456px;
+                width: 150px;
+                display: flex;
+                flex-direction: column;
+                flex-flow: column;
+                text-align: center;
+            }
+            #ui  button {
+                background-color: #446221;
+                border: none;
+                height: 40px;
+                width: 40px;
+                padding: auto;
+                font-size: 30px;
+                font-weight: bolder;
+            }
+            #pause {
+                background-image: url("images/pausebutton.JPG");
+                background-size: 100% 100%;
+            }
+            #replay {
+                background-image: url("images/replaybutton.JPG");
+                background-size: 100% 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <canvas height="450px" width="750px" id="canvas">
+                
+            </canvas>
+            <div id="gameover" class="gameover">Game Over</div>
+            <div id="tutText" class="gameover" style="bottom: auto;"></div>
+            <div id="ui">
+                <br>
+                <div>
+                    <button onclick="togglePause()" id="pause"></button>
+                    &nbsp;&nbsp;
+                    <button onclick="initialise()" id="replay"></button>
+                </div>
+                <div>
+                    <h3>HEALTH</h3>
+                    <span id="health"></span>
+                </div>
+                <div>
+                    <h3>SCORE</h3>
+                    <span id="score"></span>
+                </div>
+                <div>
+                    <h3>COUNT</h3>
+                    <span id="count"></span>
+                </div>
+            </div>
+        </div>
+    </body>
+    <img src="images/Sprites.png" style="display: none;"></img>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/jelly.js"></script>
+    <script src="scripts/player.js"></script>
+    <script src="scripts/util.js"></script>
+    <script src="scripts/ui.js"></script>
+</html>
